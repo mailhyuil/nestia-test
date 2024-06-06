@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { v4 as uuid } from 'uuid';
-import { CreateUserDto, UserDto } from './user.dto';
+import { CreateUserDto, UserDto } from '../../../../common/src/dto/user.dto';
 const users: UserDto[] = [
   {
     id: uuid(), // uuid

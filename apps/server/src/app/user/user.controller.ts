@@ -1,10 +1,6 @@
-/*
-https://docs.nestjs.com/controllers#controllers
-*/
-
+import { CreateUserDto } from '@app/common';
 import { TypedBody, TypedParam, TypedRoute } from '@nestia/core';
 import { Controller } from '@nestjs/common';
-import { CreateUserDto } from './user.dto';
 import { UserService } from './user.service';
 
 @Controller('users')
