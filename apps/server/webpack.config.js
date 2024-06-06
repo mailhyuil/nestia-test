@@ -16,29 +16,16 @@ module.exports = {
       assets: ['./src/assets'],
       optimization: false,
       outputHashing: 'none',
-      // CUSTOMIZE HERE
-      entry: {
-        server: './src/executable/server.ts',
-      },
-      output: {
-        path: path.join(__dirname, 'dist'),
-        filename: '[name].js',
-      },
-      // JUST KEEP THEM
-      externals: [webpackNodeExternals()],
-      mode: 'development',
-      module: {
-        rules: [
-          {
-            test: /\.ts$/,
-            exclude: /node_modules/,
-            loader: 'ts-loader',
+      transformers: [
+        'typia/lib/transform',
+        {
+          name: '@nestia/core/lib/transform',
+          options: {
+            validate: 'assert',
+            stringify: 'assert',
           },
-        ],
-      },
-      resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-      },
+        },
+      ],
     }),
   ],
 };
